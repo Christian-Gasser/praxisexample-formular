@@ -33,11 +33,11 @@ export default function Formular(props) {
         {
             id: 'conservation',
             title: 'Naturschutz',
-            description: ''
+            description: 'Experten schätzen, dass pro Tag bis zu 150 Pflanzen- und Tierarten von der Erde verschwinden. Dies ist eine ernorm grosse menge und wir als Menschen müssen dagegen unternehmen. Erfahren Sie auf einem spannenden Rundgang durch den Zoo die Geschichten von bedrohten Tierarten und wie der Zoo sie schützt. Dabei lernen sie auch die Tierarten kennen, welche nur durch Zoos überlebt haben.'
         },{
             id: 'biodiversity',
             title: 'Biodiversität',
-            description: ''
+            description: 'Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können.'
         }
         
     ];
