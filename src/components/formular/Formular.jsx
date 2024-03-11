@@ -2,6 +2,7 @@ import BaseInput from "../UI/BaseInput";
 import BaseCheckBox from "../UI/BaseCheckBox";
 import BaseRadio from "../UI/BaseRadio";
 import BaseButton from "../UI/BaseButton";
+import BaseCard from "../UI/BaseCard";
 
 
 
@@ -44,11 +45,25 @@ export default function Formular(props) {
     return (
         <div>
             <form>
-                <BaseInput id="name" name="Name" type="text"></BaseInput>
-                <BaseInput id="prename" name="Vorname" type="text"></BaseInput>
-                <BaseInput id="email" name="Email-Adresse" type="text"></BaseInput>
-                <BaseInput id="tel" name="Telefonnummer" type="tel"></BaseInput>
-                <BaseInput id="date" name="Datum" type="date"></BaseInput>
+                <BaseCard>
+                    <BaseInput id="name" name="Name" type="text"></BaseInput>
+                </BaseCard>
+                <BaseCard>
+                    <BaseInput id="prename" name="Vorname" type="text"></BaseInput>
+                </BaseCard>
+                <BaseCard>
+                    <BaseInput id="email" name="Email-Adresse" type="text"></BaseInput>
+                </BaseCard>
+                <BaseCard>
+                    <BaseInput id="tel" name="Telefonnummer" type="tel"></BaseInput>
+                </BaseCard>
+                <BaseCard>
+                    <BaseInput id="date" name="Datum" type="date"></BaseInput>
+                </BaseCard>
+                
+                
+                
+                
                 <br/>
 
                     <div class="">

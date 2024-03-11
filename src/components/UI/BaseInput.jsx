@@ -1,10 +1,11 @@
 export default function BaseRadio(props) {
     return (
         <div>
-            <div>
-                <label>{props.name}:</label>
-                <input type={props.type} name={props.id} id={props.id}/>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping">@</span>
+                <input type={props.type} class="form-control" placeholder={props.name} aria-label={props.name} aria-describedby="addon-wrapping" />
             </div>
         </div>
+
     );
 };
