@@ -3,6 +3,7 @@ import BaseCheckBox from "../UI/BaseCheckBox";
 import BaseRadio from "../UI/BaseRadio";
 import BaseButton from "../UI/BaseButton";
 import BaseCard from "../UI/BaseCard";
+import GuideType from "../formular/GuideType";
 
 
 
@@ -35,72 +36,60 @@ export default function Formular(props) {
             id: 'conservation',
             title: 'Naturschutz',
             description: 'Experten schätzen, dass pro Tag bis zu 150 Pflanzen- und Tierarten von der Erde verschwinden. Dies ist eine ernorm grosse menge und wir als Menschen müssen dagegen unternehmen. Erfahren Sie auf einem spannenden Rundgang durch den Zoo die Geschichten von bedrohten Tierarten und wie der Zoo sie schützt. Dabei lernen sie auch die Tierarten kennen, welche nur durch Zoos überlebt haben.'
-        },{
+        }, {
             id: 'biodiversity',
             title: 'Biodiversität',
             description: 'Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können.'
         }
-        
+
     ];
     return (
         <div>
             <form>
-                <BaseCard>
-                    <BaseInput id="name" name="Name" type="text"></BaseInput>
-                </BaseCard>
-                <BaseCard>
-                    <BaseInput id="prename" name="Vorname" type="text"></BaseInput>
-                </BaseCard>
-                <BaseCard>
-                    <BaseInput id="email" name="Email-Adresse" type="text"></BaseInput>
-                </BaseCard>
-                <BaseCard>
-                    <BaseInput id="tel" name="Telefonnummer" type="tel"></BaseInput>
-                </BaseCard>
-                <BaseCard>
-                    <BaseInput id="date" name="Datum" type="date"></BaseInput>
-                </BaseCard>
-                
-                
-                
-                
-                <br/>
+                <BaseInput id="name" name="Name" type="text"></BaseInput>
+                <BaseInput id="prename" name="Vorname" type="text"></BaseInput>
+                <BaseInput id="email" name="Email-Adresse" type="text"></BaseInput>
+                <BaseInput id="tel" name="Telefonnummer" type="tel"></BaseInput>
+                <BaseInput id="date" name="Datum" type="date"></BaseInput>
+                <br />
 
-                    <div class="">
-                        <input type="radio" id="masoala" name="guide-type" />
-                        <h2>Masoala Regenwald</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="kaeng-krachan" name="guide-type" />
-                        <h2>Hinter den Kulissen des Kaeng Krachan Elefantenpark</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="naturschutz" name="guide-type" />
-                        <h2>Naturschutz</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="kommunikation-im-tierreich" name="guide-type" />
-                        <h2>Kommunokation im Tierreich</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
-                        <h2>Rekorde im Tierreich</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
-                        <h2>Rekorde im Tierreich</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
-                    <div class="">
-                        <input type="radio" id="biodiversity" name="guide-type" />
-                        <h2>Biodiversität</h2>
-                        <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                    </div>
+                <GuideType id="biodiversity" title="Biodiversität" description="Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können." picture=""></GuideType>
+                
+                <div class="">
+                    <input type="radio" id="masoala" name="guide-type" />
+                    <h2>Masoala Regenwald</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="kaeng-krachan" name="guide-type" />
+                    <h2>Hinter den Kulissen des Kaeng Krachan Elefantenpark</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="naturschutz" name="guide-type" />
+                    <h2>Naturschutz</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="kommunikation-im-tierreich" name="guide-type" />
+                    <h2>Kommunokation im Tierreich</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
+                    <h2>Rekorde im Tierreich</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
+                    <h2>Rekorde im Tierreich</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
+                <div class="">
+                    <input type="radio" id="biodiversity" name="guide-type" />
+                    <h2>Biodiversität</h2>
+                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
+                </div>
                 <div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="duration" id="1h" />
