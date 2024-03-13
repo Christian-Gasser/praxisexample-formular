@@ -4,8 +4,9 @@ import BaseRadio from "../UI/BaseRadio";
 import BaseButton from "../UI/BaseButton";
 import BaseCard from "../UI/BaseCard";
 import GuideType from "../formular/GuideType";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-
+import { Button, Alert, Card } from "react-bootstrap"
 
 export default function Formular(props) {
     const inputs = [
@@ -55,6 +56,15 @@ export default function Formular(props) {
 
                 <GuideType id="biodiversity" title="Biodiversität" description="Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können." picture=""></GuideType>
                 
+                <Card style={{ color: "black"}}>
+                    <Card.Img src=".../pictures/Breitschnauzenkaiman.JPG"/>
+                    <Card.Body>
+                        <Card.Title>Title</Card.Title>
+                        <Card.Text>
+                            Some Text!
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
                 <div class="">
                     <input type="radio" id="masoala" name="guide-type" />
                     <h2>Masoala Regenwald</h2>
@@ -104,6 +114,7 @@ export default function Formular(props) {
                         </label>
                     </div>
                 </div>
+                <Button>Test Button</Button>
             </form>
         </div>
     );
