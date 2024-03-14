@@ -1,120 +1,115 @@
-import BaseInput from "../UI/BaseInput";
-import BaseCheckBox from "../UI/BaseCheckBox";
-import BaseRadio from "../UI/BaseRadio";
-import BaseButton from "../UI/BaseButton";
-import BaseCard from "../UI/BaseCard";
-import GuideType from "../formular/GuideType";
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-import { Button, Alert, Card } from "react-bootstrap"
+import React, {useEffect, useState} from 'react';
 
 export default function Formular(props) {
-    const inputs = [
+    //State
+    const[name, setName]= useState("");
+    const[prename, setPrename]= useState("");
+    const[ceviName, setCeviName]= useState("");
+    const[contactName, setContactName]= useState("");
+    const[contactPrename, setContactPrename]= useState("");
+    const[contactNum, setContactNum]= useState("");
+    const[checkbox, setCheckbox]= useState("");
+    const[food, setFood]= useState("");
+    const[allergies, setAllergies]= useState("");
+    const[comment, setComment]= useState("");
 
-    ];
-    const guideTypes = [
-        {
-            id: 'masoala',
-            title: 'Masoala Regenwald',
-            description: 'Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.'
-        },
-        {
-            id: 'kaeng-krachan',
-            title: 'Hinter den Kulissen des Kaeng Krachan Elefantenpark',
-            description: 'In dieser Führung begeben Sie sich in die Bereiche des Kaeng Krachan Elefantenpark, die man als normaler Besucher nicht sieht. Sie werden dabei viel über die Haltung der Elefanten und können selbst das vorbereitete Futter zu einer der Futterstationen bringen und dieser Auffüllen. Ausserdem erhalten Sie einen Einblick in die Aufgaben des Zoos.'
-        },
-        {
-            id: 'communication-in-animal-kingdom',
-            title: 'Kommunikation im Tierreich',
-            description: 'Es singt, trommelt, imponiert, grinst, duftet, gurgelt, vibriert und tanzt im Zoo. Dies alles sind verschiedene Arten der Kommunikation. Begeben Sie sich auf eine Tour durch den Zoo Zürich und lernen sie verschiedene Tiere und ihre Art der Kommunikation kennen. Ausserdem erhalten Sie einen Einblick in die Aufgaben des Zoos.'
-        },
-        {
-            id: 'records-in-animal-kingdom',
-            title: 'Rekorde im Tierreich',
-            description: 'Im Laufe von Jahrmillionen hat die Evolution in Tieren Fähigkeiten hervorgebracht, bei denen wir Menschen kaum mithalten kann. Begeben Sie sich auf eine Tour durch den Zoo Zürich und lernen sie verschiedene Tiere und ihre Rekorde kennen. Ausserdem erhalten Sie einen Einblick in die Aufgaben des Zoos.'
-        },
-        {
-            id: 'conservation',
-            title: 'Naturschutz',
-            description: 'Experten schätzen, dass pro Tag bis zu 150 Pflanzen- und Tierarten von der Erde verschwinden. Dies ist eine ernorm grosse menge und wir als Menschen müssen dagegen unternehmen. Erfahren Sie auf einem spannenden Rundgang durch den Zoo die Geschichten von bedrohten Tierarten und wie der Zoo sie schützt. Dabei lernen sie auch die Tierarten kennen, welche nur durch Zoos überlebt haben.'
-        }, {
-            id: 'biodiversity',
-            title: 'Biodiversität',
-            description: 'Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können.'
-        }
-
-    ];
+    //Functions
+    const changeFood = e => {
+        setFood(e.target.value)
+      }
+    function onSubmit(){
+        console.log(prename+" "+name+" v/o "+ceviName);
+        console.log(contactPrename+" "+contactName+" with "+contactNum+" veryfied "+checkbox);
+        console.log(food+" with following allergies "+allergies);
+        console.log("following comment: "+ comment)
+      } 
     return (
-        <div>
-            <form>
-                <BaseInput id="name" name="Name" type="text"></BaseInput>
-                <BaseInput id="prename" name="Vorname" type="text"></BaseInput>
-                <BaseInput id="email" name="Email-Adresse" type="text"></BaseInput>
-                <BaseInput id="tel" name="Telefonnummer" type="tel"></BaseInput>
-                <BaseInput id="date" name="Datum" type="date"></BaseInput>
+        <div class="container">
+            <form onSubmit={onSubmit()}>
+                <h1>Anmeldung zum Cevi-Lager</h1>
+
+                {/*Teilnehmer*/}
+                <div class="row gy-2">
+                    <h3>Teilnehmer</h3>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="name" aria-describedby="addon-wrapping" value={name} onChange={(e)=> setName(e.target.value)}/>
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Vorname" aria-label="prename" aria-describedby="addon-wrapping" value={prename} onChange={(e)=> setPrename(e.target.value)}/>
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Ceviname" aria-label="ceviName" aria-describedby="addon-wrapping" value={ceviName} onChange={(e)=> setCeviName(e.target.value)}/>
+                    </div>
+                </div>
+                <br />
+                <br/>
+
+                {/*Notfallkontakt*/}
+                <div class="row gy-2">
+                    <h3>Notfallkontakt</h3>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="contactName" aria-describedby="addon-wrapping" value={contactName} onChange={(e)=> setContactName(e.target.value)}/>
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="text" class="form-control" placeholder="Vorname" aria-label="contactPrename" aria-describedby="addon-wrapping" value={contactPrename} onChange={(e)=> setContactPrename(e.target.value)}/>
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping">@</span>
+                        <input type="tel" class="form-control" placeholder="Telefon" aria-label="contactNum" aria-describedby="addon-wrapping" value={contactNum} onChange={(e)=> setContactNum(e.target.value)}/>
+                    </div>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" onChange={(e)=> setCheckbox(e.target.value)}/>
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Hiermit bestätige ich, dass der hier angegebene Notfallkontakt eine erziehungsberechtigte Person des Teilnehmers ist.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br />
                 <br />
 
-                <GuideType id="biodiversity" title="Biodiversität" description="Auf dieser Welt gibt es 1.8 Millionen beschriebene Tierarten. Bei diesem Rundgang werden Ihnen konkreten Beispielen vorgestellt, was Biodiversität bedeutet und wieso sie grundlegend für intakte Ökosysteme ist. Ausserdem erfahren sie, welche Massnahmen der Zoo unternimmt um die Biodiversität aufrecht zu erhalten und was Sie als Besucher tun können." picture=""></GuideType>
-                
-                <Card style={{ color: "black"}}>
-                    <Card.Img src=".../pictures/Breitschnauzenkaiman.JPG"/>
-                    <Card.Body>
-                        <Card.Title>Title</Card.Title>
-                        <Card.Text>
-                            Some Text!
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <div class="">
-                    <input type="radio" id="masoala" name="guide-type" />
-                    <h2>Masoala Regenwald</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="kaeng-krachan" name="guide-type" />
-                    <h2>Hinter den Kulissen des Kaeng Krachan Elefantenpark</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="naturschutz" name="guide-type" />
-                    <h2>Naturschutz</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="kommunikation-im-tierreich" name="guide-type" />
-                    <h2>Kommunokation im Tierreich</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
-                    <h2>Rekorde im Tierreich</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="rekorde-im-tierreich" name="guide-type" />
-                    <h2>Rekorde im Tierreich</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div class="">
-                    <input type="radio" id="biodiversity" name="guide-type" />
-                    <h2>Biodiversität</h2>
-                    <p>Begeben Sie sich auf eine Tour auf den Erlebniswegen durch den Masoala Regenwald. Sie lernen die Vielfalt der Pflanzen und Tiere des Masoala Regenwaldes kennen und erhalten Einblick in das Naturschutzprojekt des Zoo Zürich auf der Halbinsel Masoala in Madagaskar. So wird verständlich, warum uns allen die nachhaltige Nutzung des Regenwaldes am Herzen liegen sollte.</p>
-                </div>
-                <div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="duration" id="1h" />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            1 Stunde
-                        </label>
+                {/*Essen*/}
+                <div class="row gy-2">
+                    <h3>Essen</h3>
+                    <div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="essen" id="fleisch" value="Fleisch" onChange={changeFood}/>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Fleisch
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="essen" id="vegi" value="Vegetarisch" onChange={changeFood}/>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Vegetarisch
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="duration" id="1.5h" checked />
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            1.5 Stunden
-                        </label>
+                    <div class="input-group flex-nowrap">
+                        <textarea type="text" class="form-control" placeholder="Allergien" aria-label="bemerkungen" name="allergies" aria-describedby="addon-wrapping" value={allergies} onChange={(e)=> setAllergies(e.target.value)}/>
                     </div>
                 </div>
-                <Button>Test Button</Button>
+                <br />
+                <br />
+
+                {/*Bemerkungen */}
+                <div class="row gy-2">
+                    <h3>Bemerkungen</h3>
+                    <div class="input-group flex-nowrap">
+                        <textarea type="text" class="form-control" placeholder="Krankheiten, Regelmässige Medikamente, etc." aria-label="bemerkungen" name="comment" aria-describedby="addon-wrapping" value={comment} onChange={(e)=> setComment(e.target.value)}/>
+                    </div>
+                </div>
+                <br />
+                <br />
+
+                <button class="btn btn-primary" type="submit">Senden</button>
             </form>
         </div>
     );
