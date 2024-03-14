@@ -22,12 +22,13 @@ export default function Formular(props) {
         console.log(prename+" "+name+" v/o "+ceviName);
         console.log(contactPrename+" "+contactName+" with "+contactNum+" veryfied "+checkbox);
         console.log(food+" with following allergies "+allergies);
-        console.log("following comment: "+ comment)
+        console.log("following comment: "+ comment);
       } 
     return (
         <div class="container">
-            <form onSubmit={onSubmit()}>
+            <form onSubmit={onSubmit}>
                 <h1>Anmeldung zum Cevi-Lager</h1>
+                <br/>
 
                 {/*Teilnehmer*/}
                 <div class="row gy-2">
