@@ -1,76 +1,80 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+
+import InputField from './form-elements/InputField.jsx';
+import InputText from './form-elements/InputText.jsx';
+import InputRadio from './form-elements/InputRadio.jsx';
+import DoubleInputField from './form-elements/DoubleInputField.jsx';
+import CheckBox from './form-elements/CheckBox.jsx';
 
 export default function Formular(props) {
     //State
-    const[name, setName]= useState("");
-    const[prename, setPrename]= useState("");
-    const[ceviName, setCeviName]= useState("");
-    const[contactName, setContactName]= useState("");
-    const[contactPrename, setContactPrename]= useState("");
-    const[contactNum, setContactNum]= useState("");
-    const[checkbox, setCheckbox]= useState("");
-    const[food, setFood]= useState("");
-    const[allergies, setAllergies]= useState("");
-    const[comment, setComment]= useState("");
+    const [name, setName] = useState("");
+    const [prename, setPrename] = useState("");
+    const [ceviName, setCeviName] = useState("");
+    const [address, setAddress] = useState("");
+    const [plz, setPlz] = useState("");
+    const [city, setCity] = useState("");
+    const [contactName, setContactName] = useState("");
+    const [contactPrename, setContactPrename] = useState("");
+    const [contactNum, setContactNum] = useState("");
+    const [validation, setValidation] = useState("");
+    const [food, setFood] = useState("");
+    const [allergies, setAllergies] = useState("");
+    const [comment, setComment] = useState("");
 
     //Functions
+    const updateName = (e) => setName(e.target.value);
+    const updatePrename = (e) => setPrename(e.target.value);
+    const updateCeviName = (e) => setCeviName(e.target.value);
+    const updateAddress = (e) => setAddress(e.target.value);
+    const updatePlz = (e) => setPlz(e.target.value);
+    const updateCity = (e) => setCity(e.target.value);
+    const updateContactName = (e) => setContactName(e.target.value);
+    const updateContactPrename = (e) => setContactPrename(e.target.value);
+    const updateContactNum = (e) => setContactNum(e.target.value);
+    const updateValidation = (e) => setValidation(e.target.value);
+    const updateFood = (e) => setFood(e.target.value);
+    const updateAllergies = (e) => setAllergies(e.target.value);
+    const updateComment = (e) => setComment(e.target.value);
+    
+
     const changeFood = e => {
         setFood(e.target.value)
-      }
-    function onSubmit(){
-        console.log(prename+" "+name+" v/o "+ceviName);
-        console.log(contactPrename+" "+contactName+" with "+contactNum+" veryfied "+checkbox);
-        console.log(food+" with following allergies "+allergies);
-        console.log("following comment: "+ comment);
-      } 
+    }
+    function onSubmit() {
+        console.log('submitted');
+   
+    }
     return (
         <div class="container">
             <form onSubmit={onSubmit()}>
                 <h1>Anmeldung zum Cevi-Lager</h1>
-                <br/>
+                <br />
 
                 {/*Teilnehmer*/}
                 <div class="row gy-2">
                     <h3>Teilnehmer</h3>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Name" aria-label="name" aria-describedby="addon-wrapping" value={name} onChange={(e)=> setName(e.target.value)}/>
-                    </div>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Vorname" aria-label="prename" aria-describedby="addon-wrapping" value={prename} onChange={(e)=> setPrename(e.target.value)}/>
-                    </div>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Ceviname" aria-label="ceviName" aria-describedby="addon-wrapping" value={ceviName} onChange={(e)=> setCeviName(e.target.value)}/>
-                    </div>
+                    <InputField type="text" placeholder="Name" name="name" giveback={updateName}></InputField>
+                    <InputField type="text" placeholder="Vorame" name="prename" giveback={updatePrename}></InputField>
+                    <InputField type="text" placeholder="Ceviname" name="ceviname" giveback={updateCeviName}></InputField>
+                    <InputField type="text" placeholder="Addresse" name="addresse" giveback={updateAddress}></InputField>
+                    <DoubleInputField 
+                        type1="text" placeholder1="PLZ" name1="plz" giveback1={updatePlz}
+                        type2="text" placeholder2="Ort" name2="city" giveback2={updateCity}
+                    ></DoubleInputField>
                 </div>
                 <br />
-                <br/>
+                <br />
 
                 {/*Notfallkontakt*/}
                 <div class="row gy-2">
                     <h3>Notfallkontakt</h3>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Name" aria-label="contactName" aria-describedby="addon-wrapping" value={contactName} onChange={(e)=> setContactName(e.target.value)}/>
-                    </div>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="text" class="form-control" placeholder="Vorname" aria-label="contactPrename" aria-describedby="addon-wrapping" value={contactPrename} onChange={(e)=> setContactPrename(e.target.value)}/>
-                    </div>
-                    <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">@</span>
-                        <input type="tel" class="form-control" placeholder="Telefon" aria-label="contactNum" aria-describedby="addon-wrapping" value={contactNum} onChange={(e)=> setContactNum(e.target.value)}/>
-                    </div>
+                    <InputField type="text" placeholder="Name" name="contactName" giveback={updateContactName}></InputField>
+                    <InputField type="text" placeholder="Vorname" name="contactPrename" giveback={updateContactPrename}></InputField>
+                    <InputField type="tel" placeholder="Telefon" name="name" giveback={updateName}></InputField>
                     <div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="flexCheckDefault" onChange={(e)=> setCheckbox(e.target.value)}/>
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Hiermit bestätige ich, dass der hier angegebene Notfallkontakt eine erziehungsberechtigte Person des Teilnehmers ist.
-                            </label>
-                        </div>
+                        <CheckBox text="Hiermit bestätige ich, dass der hier angegebene Notfallkontakt eine erziehungsberechtigte Person des Teilnehmers ist." name="validation" giveback={updateValidation}></CheckBox>
                     </div>
                 </div>
                 <br />
@@ -80,22 +84,10 @@ export default function Formular(props) {
                 <div class="row gy-2">
                     <h3>Essen</h3>
                     <div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="essen" id="fleisch" value="Fleisch" onChange={changeFood}/>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Fleisch
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="essen" id="vegi" value="Vegetarisch" onChange={changeFood}/>
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Vegetarisch
-                            </label>
-                        </div>
+                        <InputRadio group="essen" name="meet" placeholder="Fleisch" ></InputRadio>
+                        <InputRadio group="essen" name="vegi" placeholder="Vegetarisch" ></InputRadio>
                     </div>
-                    <div class="input-group flex-nowrap">
-                        <textarea type="text" class="form-control" placeholder="Allergien" aria-label="bemerkungen" name="allergies" aria-describedby="addon-wrapping" value={allergies} onChange={(e)=> setAllergies(e.target.value)}/>
-                    </div>
+                    <InputText placeholder="Allergien" name="allergies" giveback={updateAllergies}></InputText>
                 </div>
                 <br />
                 <br />
@@ -103,14 +95,12 @@ export default function Formular(props) {
                 {/*Bemerkungen */}
                 <div class="row gy-2">
                     <h3>Bemerkungen</h3>
-                    <div class="input-group flex-nowrap">
-                        <textarea type="text" class="form-control" placeholder="Krankheiten, Regelmässige Medikamente, etc." aria-label="bemerkungen" name="comment" aria-describedby="addon-wrapping" value={comment} onChange={(e)=> setComment(e.target.value)}/>
-                    </div>
+                <InputText placeholder="Krankheiten, regelmässige Medikamente, etc." name="comment" giveback={updateComment}></InputText>
                 </div>
                 <br />
                 <br />
 
-                <button class="btn btn-primary" type="submit">Senden</button>
+                <button class="btn btn-primary btn-lg" type="submit">Senden</button>
             </form>
         </div>
     );
