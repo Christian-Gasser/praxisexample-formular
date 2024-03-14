@@ -26,7 +26,7 @@ export default function Formular(props) {
       } 
     return (
         <div class="container">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit()}>
                 <h1>Anmeldung zum Cevi-Lager</h1>
                 <br/>
 
