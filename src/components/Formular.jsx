@@ -6,7 +6,7 @@ import InputText from './form-elements/InputText.jsx';
 import InputRadio from './form-elements/InputRadio.jsx';
 import DoubleInputField from './form-elements/DoubleInputField.jsx';
 import CheckBox from './form-elements/CheckBox.jsx';
-import FormularInputs from './FormularInput.jsx';
+import FormularInput from './FormularInput.jsx';
 
 export default function Formular(props) {
     //State
