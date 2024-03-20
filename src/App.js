@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Formular from './components/Formular.jsx';
+import Formular from './components/Formular.js';
 
 function App() {
   return (
